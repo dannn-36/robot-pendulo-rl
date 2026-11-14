@@ -1,0 +1,70 @@
+Episodio   1 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  1.9° máx  5.7° | error vel 0.15 m/s | retorno  1826.7
+Episodio   2 | rugoso    dif 1.00 | ok   |  20.0 s | inclinación media  3.0° máx  9.3° | error vel 0.22 m/s | retorno  1733.1
+Episodio   3 | rugoso    dif 1.00 | CAYÓ |   6.5 s | inclinación media  4.0° máx 42.4° | error vel 0.77 m/s | retorno   487.5
+Episodio   4 | rugoso    dif 1.00 | ok   |  20.0 s | inclinación media  2.8° máx  7.4° | error vel 0.23 m/s | retorno  1737.3
+Episodio   5 | escalones dif 1.00 | CAYÓ |   8.8 s | inclinación media  2.6° máx 40.9° | error vel 0.33 m/s | retorno   753.1
+Episodio   6 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.2° máx  2.0° | error vel 0.09 m/s | retorno  1940.2
+Episodio   7 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  3.6° máx  7.0° | error vel 0.24 m/s | retorno  1681.6
+Episodio   8 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  2.2° máx  3.7° | error vel 0.29 m/s | retorno  1726.2
+Episodio   9 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.2° máx  1.4° | error vel 0.06 m/s | retorno  1959.8
+Episodio  10 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  2.1° máx  7.5° | error vel 0.46 m/s | retorno  1631.7
+Episodio  11 | mixto     dif 1.00 | ok   |  20.0 s | inclinación media  2.5° máx  7.5° | error vel 0.23 m/s | retorno  1771.5
+Episodio  12 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  1.7° máx  3.7° | error vel 0.15 m/s | retorno  1846.0
+Episodio  13 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  1.1° máx 10.6° | error vel 0.24 m/s | retorno  1756.1
+Episodio  14 | mixto     dif 1.00 | ok   |  20.0 s | inclinación media  5.9° máx 10.3° | error vel 0.59 m/s | retorno  1351.8
+Episodio  15 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.3° máx  2.2° | error vel 0.12 m/s | retorno  1897.6
+Episodio  16 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  3.6° máx  8.2° | error vel 0.60 m/s | retorno  1523.2
+Episodio  17 | plano     dif 1.00 | CAYÓ |   3.6 s | inclinación media  3.8° máx 41.2° | error vel 0.38 m/s | retorno   299.8
+Episodio  18 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.5° máx  2.9° | error vel 0.19 m/s | retorno  1868.9
+Episodio  19 | mixto     dif 1.00 | ok   |  20.0 s | inclinación media  4.1° máx 10.9° | error vel 0.37 m/s | retorno  1568.0
+Episodio  20 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  0.7° máx  4.0° | error vel 0.29 m/s | retorno  1762.4
+Episodio  21 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.3° máx  2.3° | error vel 0.19 m/s | retorno  1842.5
+Episodio  22 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  1.1° máx  4.6° | error vel 0.24 m/s | retorno  1771.2
+Episodio  23 | colinas   dif 1.00 | CAYÓ |  12.7 s | inclinación media  3.6° máx 41.6° | error vel 0.29 m/s | retorno  1081.5
+Episodio  24 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.4° máx  1.3° | error vel 0.30 m/s | retorno  1733.7
+Episodio  25 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  1.5° máx  3.3° | error vel 0.51 m/s | retorno  1586.3
+Episodio  26 | mixto     dif 1.00 | ok   |  20.0 s | inclinación media  3.9° máx  9.1° | error vel 0.38 m/s | retorno  1565.0
+Episodio  27 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  0.7° máx  4.6° | error vel 0.16 m/s | retorno  1878.0
+Episodio  28 | escalones dif 1.00 | CAYÓ |   3.2 s | inclinación media  5.9° máx 41.7° | error vel 0.55 m/s | retorno   234.2
+Episodio  29 | rugoso    dif 1.00 | ok   |  20.0 s | inclinación media  2.7° máx  5.7° | error vel 0.22 m/s | retorno  1763.5
+Episodio  30 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  4.4° máx  7.4° | error vel 0.13 m/s | retorno  1755.2
+Episodio  31 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  3.0° máx  5.8° | error vel 0.26 m/s | retorno  1685.4
+Episodio  32 | rugoso    dif 1.00 | CAYÓ |   8.5 s | inclinación media  5.1° máx 40.1° | error vel 0.23 m/s | retorno   666.6
+Episodio  33 | rugoso    dif 1.00 | ok   |  20.0 s | inclinación media  3.1° máx 10.6° | error vel 0.25 m/s | retorno  1713.8
+Episodio  34 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  3.3° máx  8.3° | error vel 0.28 m/s | retorno  1748.9
+Episodio  35 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  8.5° máx  9.9° | error vel 0.26 m/s | retorno  1347.4
+Episodio  36 | mixto     dif 1.00 | ok   |  20.0 s | inclinación media  3.9° máx  9.6° | error vel 0.31 m/s | retorno  1597.5
+Episodio  37 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  0.6° máx  1.1° | error vel 0.17 m/s | retorno  1849.0
+Episodio  38 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  1.6° máx  3.8° | error vel 0.25 m/s | retorno  1775.7
+Episodio  39 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.8° máx  6.5° | error vel 0.27 m/s | retorno  1789.5
+Episodio  40 | mixto     dif 1.00 | ok   |  20.0 s | inclinación media  6.6° máx  8.9° | error vel 0.23 m/s | retorno  1501.9
+Episodio  41 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  1.9° máx  3.7° | error vel 0.16 m/s | retorno  1836.5
+Episodio  42 | rugoso    dif 1.00 | ok   |  20.0 s | inclinación media  4.0° máx  9.0° | error vel 0.24 m/s | retorno  1644.6
+Episodio  43 | rugoso    dif 1.00 | ok   |  20.0 s | inclinación media  2.8° máx 10.7° | error vel 0.29 m/s | retorno  1664.5
+Episodio  44 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  1.1° máx  5.4° | error vel 0.17 m/s | retorno  1833.7
+Episodio  45 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  5.8° máx 10.9° | error vel 0.24 m/s | retorno  1557.4
+Episodio  46 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  2.9° máx  9.2° | error vel 0.32 m/s | retorno  1691.5
+Episodio  47 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  5.7° máx  8.7° | error vel 0.43 m/s | retorno  1390.7
+Episodio  48 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  2.8° máx  8.0° | error vel 0.20 m/s | retorno  1753.4
+Episodio  49 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.5° máx  3.1° | error vel 0.15 m/s | retorno  1878.2
+Episodio  50 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  4.3° máx  6.6° | error vel 0.16 m/s | retorno  1728.6
+Episodio  51 | rampas    dif 1.00 | ok   |  20.0 s | inclinación media  1.4° máx  8.3° | error vel 0.35 m/s | retorno  1743.1
+Episodio  52 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.4° máx  1.2° | error vel 0.34 m/s | retorno  1690.9
+Episodio  53 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  3.2° máx  5.3° | error vel 0.25 m/s | retorno  1706.6
+Episodio  54 | colinas   dif 1.00 | ok   |  20.0 s | inclinación media  1.6° máx  5.9° | error vel 0.25 m/s | retorno  1787.6
+Episodio  55 | mixto     dif 1.00 | ok   |  20.0 s | inclinación media  3.3° máx  9.5° | error vel 0.23 m/s | retorno  1708.3
+Episodio  56 | rugoso    dif 1.00 | ok   |  20.0 s | inclinación media  2.1° máx  8.6° | error vel 0.49 m/s | retorno  1541.8
+Episodio  57 | escalones dif 1.00 | ok   |  20.0 s | inclinación media  0.5° máx  2.6° | error vel 0.13 m/s | retorno  1885.5
+Episodio  58 | colinas   dif 1.00 | CAYÓ |   2.2 s | inclinación media  6.5° máx 40.2° | error vel 0.19 m/s | retorno   169.4
+Episodio  59 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.3° máx  1.8° | error vel 0.12 m/s | retorno  1900.6
+Episodio  60 | plano     dif 1.00 | ok   |  20.0 s | inclinación media  0.4° máx  1.8° | error vel 0.14 m/s | retorno  1886.8
+
+Resumen por terreno
+terreno    episodios  éxito incl. media incl. máx error vel
+plano             12    92%        0.7°      5.6°    0.20 m/s
+rampas            10   100%        3.0°      6.9°    0.33 m/s
+colinas           11    82%        3.7°     12.7°    0.26 m/s
+rugoso             9    78%        3.3°     16.0°    0.33 m/s
+escalones         11    82%        1.9°     11.7°    0.23 m/s
+mixto              7   100%        4.3°      9.4°    0.34 m/s
+TOTAL             60    88%

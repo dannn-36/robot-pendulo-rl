@@ -1,0 +1,7 @@
+{
+  "algo": "ppo",
+  "pasos": 10002432,
+  "nivel_final": 1.0,
+  "modo_accion": "independiente",
+  "minutos": 92.0
+}
