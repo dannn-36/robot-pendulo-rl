@@ -17,9 +17,16 @@ evaluar.py        # ventana 3D, vídeo y estadísticas por terreno
 ver_entrenamiento.py # ventana 3D que sigue un entrenamiento en curso (último checkpoint)
 probar_entorno.py # comprobaciones rápidas + galería de terrenos
 crear_terreno_ejemplo.py # genera terrenos/pista_ejemplo.png (plantilla de terreno propio)
+diagnostico.py    # ¿está listo este ordenador para la demo? gráfica, modelos, velocidad, calidad
+instalar.bat      # crea/repara .venv, instala las librerías y lanza el diagnóstico
 ```
 
 ## Instalación (Windows, Python 3.10 – 3.14)
+
+**Lo más fácil (p. ej. en otro portátil):** doble clic en `instalar.bat`. Busca un Python
+compatible, crea el entorno `.venv` (o lo rehace si se copió de otro ordenador: un `.venv`
+copiado no funciona, apunta al Python del PC original), instala las librerías y ejecuta
+`diagnostico.py`, que dice qué calidad gráfica usar. A mano:
 
 ```bash
 python -m venv .venv
@@ -57,6 +64,26 @@ python evaluar.py --pd --terreno colinas
 En la ventana: flechas ↑/↓ cambian la velocidad ordenada y ←/→ giran el rumbo ordenado
 15° (en cuanto tocas una flecha, las órdenes dejan de cambiar solas); doble clic sobre una
 pieza y Ctrl + arrastrar con el botón derecho para empujarla.
+
+**Calidad del dibujo** (`--calidad alta|media|baja`, solo cambia lo que se ve; la física y
+los resultados son idénticos). Por defecto la ventana usa `media` (terreno dibujado a 10 cm)
+y los vídeos `alta` (5 cm). La `alta` tarda ~35 ms por imagen incluso en una RTX 2080, más
+que los 20 ms de cada paso de control, y la `media` ~3 ms. En un portátil sin gráfica
+dedicada usa `--calidad baja` (20 cm y sin sombras).
+
+### En un portátil (p. ej. para una presentación)
+1. `instalar.bat`, o `python diagnostico.py` si ya está instalado. Al final recomienda la
+   calidad y los comandos para la demo.
+2. **Cargador conectado**: con batería Windows baja mucho la velocidad de CPU y gráfica.
+3. Si el diagnóstico dice que Python usa la gráfica integrada teniendo una NVIDIA/AMD
+   dedicada: `python diagnostico.py --gpu-dedicada` (equivale a Configuración > Pantalla >
+   Gráficos > python.exe > Alto rendimiento), reabre la terminal y vuelve a comprobar.
+4. Si el proyecto está en OneDrive, marca la carpeta como "Mantener siempre en este
+   dispositivo" para que los modelos no dependan de internet.
+5. La ruta de la carpeta debe ser corta (≤ 100 caracteres, p. ej. `C:\robot-pendulo-rl`):
+   PyTorch instala archivos con rutas de ~150 caracteres y Windows corta en 260, así que
+   en una carpeta muy anidada `pip` falla a mitad. `instalar.bat` lo comprueba antes.
+6. Lleva de respaldo vídeos grabados con `--video` en un PC con buena gráfica.
 
 **2. Entrenar** (por defecto PPO, 30 M pasos, 48 robots repartidos en un proceso por
 núcleo físico; la red se entrena en la GPU si PyTorch la detecta):

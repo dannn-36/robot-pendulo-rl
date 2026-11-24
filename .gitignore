@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+# generado por probar_entorno.py
+/terrenos.png

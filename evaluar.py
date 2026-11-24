@@ -15,6 +15,9 @@ En la ventana: flechas ↑/↓ cambian la velocidad ordenada y ←/→ giran el 
 (modelos con orden de giro); doble clic sobre una pieza + Ctrl + arrastrar con el
 botón derecho para empujar el robot.
 
+Si la ventana va a saltos (portátil sin gráfica dedicada), usa --calidad baja. Solo
+cambia el dibujo: la física y los resultados son los mismos.
+
 Con --vel-cmd o --mapa el robot mantiene el rumbo inicial (va recto); sin ellos recibe
 órdenes aleatorias que cambian cada 5-10 s, como en el entrenamiento.
 """
@@ -28,7 +31,8 @@ import numpy as np
 
 from robot_pendulo import TIPOS_TERRENO, RobotPenduloEnv
 from robot_pendulo.terreno import cargar_mapa_alturas
-from robot_pendulo.utilidades import cargar_modelo, cargar_normalizador, controlador_pd, kwargs_para_modelo
+from robot_pendulo.utilidades import (CALIDADES, cargar_modelo, cargar_normalizador, controlador_pd,
+                                      kwargs_para_modelo)
 
 
 if hasattr(sys.stdout, "reconfigure"):  # consolas Windows sin UTF-8
@@ -46,6 +50,9 @@ def main() -> None:
     p.add_argument("--duracion", type=float, default=20.0, help="segundos por episodio")
     p.add_argument("--video", type=str, default=None, help="guardar vídeo .mp4 en vez de abrir ventana")
     p.add_argument("--sin-ventana", action="store_true", help="solo calcular estadísticas")
+    p.add_argument("--calidad", choices=tuple(CALIDADES), default=None,
+                   help="detalle del dibujo 3D (por defecto: media en la ventana, alta en vídeo). "
+                        "baja = para portátiles sin gráfica dedicada; no cambia la física")
     p.add_argument("--sin-perturbaciones", action="store_true",
                    help="sin empujones, ruido ni aleatorización de dinámica")
     p.add_argument("--estocastico", action="store_true", help="muestrear acciones en vez de usar la media")
@@ -67,12 +74,19 @@ def main() -> None:
 
     modelo = normalizador = None
     if not args.pd:
+        import torch
+
+        # La red es pequeña: con un solo hilo va igual de rápido y no le quita CPU
+        # a la física ni a la ventana 3D (importante en portátiles con pocos núcleos).
+        torch.set_num_threads(1)
         modelo = cargar_modelo(args.modelo)
         normalizador = cargar_normalizador(args.modelo)
     kw_modelo = {} if args.pd else kwargs_para_modelo(modelo)
 
     modo_render = "rgb_array" if args.video else (None if args.sin_ventana else "human")
     extra = dict(ruido_obs=0.0, aleatorizar_dinamica=False, empujones=False) if args.sin_perturbaciones else {}
+    if modo_render is not None:
+        extra.update(CALIDADES[args.calidad or ("alta" if args.video else "media")])
     env = RobotPenduloEnv(render_mode=modo_render, nivel=args.dificultad, duracion_episodio=args.duracion,
                           **kw_modelo, **extra)
 

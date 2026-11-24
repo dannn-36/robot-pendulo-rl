@@ -2,7 +2,8 @@ mujoco>=3.2
 gymnasium>=1.0
 stable-baselines3>=2.4
 torch
-numpy
+# Los modelos de runs/ (vecnormalize.pkl y los .zip) se guardaron con numpy 2: numpy 1.x no los lee
+numpy>=2.0
 tensorboard
 tqdm
 rich

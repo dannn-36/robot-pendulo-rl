@@ -96,8 +96,9 @@ class ConfigEntorno:
     ancho_video: int = 960
     alto_video: int = 540
     camara: str = "seguimiento"
-    resolucion_visual: float | None = None  # m; p. ej. 0.1 dibuja un terreno más ligero (ver_entrenamiento.py)
+    resolucion_visual: float | None = None  # m; p. ej. 0.1 dibuja un terreno más ligero (ver utilidades.CALIDADES)
     sombras: bool = True
+    tamano_sombras: int = 4096          # px del mapa de sombras (menos = más rápido en GPUs integradas)
 
 
 # Desviación típica del ruido de cada bloque de la observación (con ruido_obs = 1).
@@ -150,6 +151,7 @@ class RobotPenduloEnv(gym.Env):
             self.id_hfield_dibujo = nid(mujoco.mjtObj.mjOBJ_HFIELD, "terreno_visual")
         if not c.sombras:
             m.light_castshadow[:] = 0
+        m.vis.quality.shadowsize = int(c.tamano_sombras)
         self.ruedas_local = np.array([m.body_pos[nid(mujoco.mjtObj.mjOBJ_BODY, f"rueda_{r}")]
                                       for r in NOMBRES_RUEDAS])
 
@@ -557,13 +559,17 @@ class RobotPenduloEnv(gym.Env):
         except Exception:  # noqa: BLE001  (versiones antiguas de mujoco)
             pass
         self._visor.sync()
-        # Mantener tiempo real
+        # Mantener tiempo real con un reloj absoluto (`_t_ultimo_frame` = instante en que
+        # toca mostrar este paso), para que lo que se pasa cada `sleep` no se acumule.
+        # Tras un parón (cambio de terreno, ventana arrastrada) se reinicia el reloj en vez
+        # de correr para recuperar.
         ahora = time.perf_counter()
-        if self._t_ultimo_frame is not None:
-            espera = self.dt - (ahora - self._t_ultimo_frame)
-            if espera > 0:
-                time.sleep(espera)
-        self._t_ultimo_frame = time.perf_counter()
+        if self._t_ultimo_frame is None or ahora - self._t_ultimo_frame > 0.25:
+            self._t_ultimo_frame = ahora
+        else:
+            self._t_ultimo_frame += self.dt
+            if self._t_ultimo_frame > ahora:
+                time.sleep(self._t_ultimo_frame - ahora)
 
     def _tecla(self, codigo: int) -> None:
         # Códigos GLFW: 265 arriba, 264 abajo, 263 izquierda, 262 derecha.
